@@ -59,7 +59,7 @@ module.exports = {
             {
                 test: /\.less/,
                 use: ExtractTextPlugin.extract({
-                    use: ['autoprefixer-loader', 'less-loader'],
+                    use: ['css-loader', 'autoprefixer-loader', 'less-loader'],
                     fallback: 'style-loader'
                 })
             },
@@ -78,7 +78,8 @@ module.exports = {
         extensions: ['.js', '.vue'],
         alias: {
             'vue': 'vue/dist/vue.esm.js',
-            '@': path.resolve('src')
+            '@': path.resolve('src'),
+            '_c': path.resolve('src') + '/template/components'
         }
     }
 };
